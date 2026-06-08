@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杰维工作室 - 精密3D打印产品</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        darkgray: '#1d1d1f',
+                        lightgray: '#f5f5f7',
+                        appleblue: '#0071e3',
+                        applegray: '#86868b',
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .backdrop-blur-nav {
+                backdrop-filter: saturate(180%) blur(20px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-darkgray scroll-smooth">
+    <!-- 导航栏 - 现在完全全屏宽度 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-darkgray/80 backdrop-blur-nav border-b border-gray-200 dark:border-gray-700">
+        <!-- 移除了max-w-7xl，只保留左右padding -->
+        <div class="px-4 sm:px-8 lg:px-16">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <!-- Logo占位符 - 你可以替换这里的src为你的实际logo -->
+                    <img src="https://picsum.photos/id/237/40/40" alt="杰维工作室Logo" class="h-8 w-8 mr-3 rounded-lg">
+                    <a href="#" class="text-xl font-semibold text-darkgray dark:text-white">杰维工作室</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#product" class="text-sm text-darkgray dark:text-white hover:text-appleblue transition-colors">产品</a>
+                    <a href="#contact" class="text-sm text-darkgray dark:text-white hover:text-appleblue transition-colors">联系我们</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-darkgray dark:text-white">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 - 减少了左右边距，轮播图更大 -->
+    <section id="hero" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-lightgray dark:bg-darkgray overflow-hidden">
+        <!-- 将max-w-7xl改为max-w-6xl，同时增大了左右padding -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-darkgray dark:text-white mb-4 fade-in">
+                    杰维立方 JOVICUBE
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-applegray mb-6 fade-in delay-100">
+                    新一代桌面级3D打印产品
+                </h2>
+                <p class="text-lg md:text-xl text-applegray max-w-2xl mb-10 fade-in delay-200 text-balance">
+                    精密打印,无限创意。为用户们打造更专业更独特的的专业级3D打印产品。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-12 fade-in delay-300">
+                    <a href="#product" class="bg-appleblue hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-full transition-colors">
+                        了解更多
+                    </a>
+                    <a href="#contact" class="border border-appleblue text-appleblue hover:bg-appleblue hover:text-white font-medium py-3 px-8 rounded-full transition-colors">
+                        立即订购
+                    </a>
+                </div>
+                
+                <!-- 轮播图区域 - 现在宽度更大 -->
+                <div class="w-full fade-in delay-400">
+                    <div class="carousel-container aspect-[16/9]">
+                        <!-- 轮播图片 -->
+                        <div class="carousel-slide active">
+                            <img src="http://www.jieweilifang.cn//jieweilifang4.jpg" alt="杰维立方产品展示1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="http://www.jieweilifang.cn//jieweilifang3.jpg" alt="杰维立方产品展示2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="http://www.jieweilifang.cn/jieweilifang/11111.jpg" alt="杰维立方产品展示3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="http://www.jieweilifang.cn//jieweilifang微信图片_20260604175334_42_46.jpg" alt="杰维立方产品展示4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="http://www.jieweilifang.cn//jieweilifangsku1_画板 1.jpg" alt="杰维立方产品展示5">
+                        </div>
+                        
+                        <!-- 左右箭头 - 鼠标悬停时显示 -->
+                        <button class="carousel-arrow carousel-prev">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-arrow carousel-next">
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
+                        
+                        <!-- 指示器 -->
+                        <div class="carousel-indicators">
+                            <button class="carousel-indicator active" data-slide="0"></button>
+                            <button class="carousel-indicator" data-slide="1"></button>
+                            <button class="carousel-indicator" data-slide="2"></button>
+                            <button class="carousel-indicator" data-slide="3"></button>
+                            <button class="carousel-indicator" data-slide="4"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示区域 - 同样调整了最大宽度 -->
+    <section id="product" class="py-20 bg-white dark:bg-darkgray">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-darkgray dark:text-white mb-4">选择你的杰维立方</h2>
+                <p class="text-xl text-applegray max-w-2xl mx-auto">
+                    多种套餐和定制选项，满足不同需求
+                </p>
+            </div>
+
+            <!-- 产品颜色选择 -->
+            <div class="mb-20">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="w-full lg:w-1/2">
+                        <div id="product-image-container" class="relative">
+                            <img id="product-main-image" src="http://www.jieweilifang.cn/jieweilifang/11111.jpg" alt="杰维立方 深空灰" class="w-full h-auto rounded-2xl shadow-xl product-image">
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <h3 class="text-2xl md:text-3xl font-bold text-darkgray dark:text-white mb-2">杰维1号Pro</h3>
+                        <p class="text-xl text-applegray mb-6">¥78 起</p>
+                        
+                        <!-- 颜色选择 -->
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium text-darkgray dark:text-white mb-4">颜色</h4>
+                            <div class="flex gap-4">
+                                <button class="color-option active w-10 h-10 rounded-full bg-gray-700 border border-gray-300" data-color="space-gray" data-image="http://www.jieweilifang.cn/jieweilifang/11111.jpg"></button>
+                                <button class="color-option w-10 h-10 rounded-full bg-white border border-gray-300" data-color="silver" data-image="http://www.jieweilifang.cn/jieweilifang/11111.jpg"></button>
+                                <button class="color-option w-10 h-10 rounded-full bg-blue-500 border border-gray-300" data-color="blue" data-image="http://www.jieweilifang.cn/jieweilifang/11111.jpg"></button>
+                                <button class="color-option w-10 h-10 rounded-full bg-orange-400 border border-gray-300" data-color="orange" data-image="http://www.jieweilifang.cn/jieweilifang/11111.jpg"></button>
+                            </div>
+                            <p id="color-name" class="text-sm text-applegray mt-2">深空灰</p>
+                        </div>
+                        
+                        <!-- 选择购买套餐 -->
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium text-darkgray dark:text-white mb-4">选择购买</h4>
+                            <div class="grid grid-cols-1 gap-3">
+                                <button class="config-option active border-2 border-gray-200 rounded-lg p-4 text-left w-full">
+                                    <div class="flex justify-between">
+                                        <span class="font-medium">标准版</span>
+                                        <span>¥78</span>
+                                    </div>
+                                </button>
+                                <button class="config-option border-2 border-gray-200 rounded-lg p-4 text-left w-full">
+                                    <div class="flex justify-between">
+                                        <span class="font-medium">MagSafe + iWatch 组合包</span>
+                                        <span>¥98</span>
+                                    </div>
+                                </button>
+                                <button class="config-option border-2 border-gray-200 rounded-lg p-4 text-left w-full">
+                                    <div class="flex justify-between">
+                                        <span class="font-medium">MagSafe + iWatch + AirPods 组合包</span>
+                                        <span>¥118</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 特殊定制 -->
+                        <div class="mb-8">
+                            <h4 class="text-lg font-medium text-darkgray dark:text-white mb-4">特殊定制</h4>
+                            <div class="space-y-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="w-5 h-5 rounded text-appleblue focus:ring-appleblue">
+                                    <span class="ml-3 text-darkgray dark:text-white">颜色定制 (+¥20起)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="w-5 h-5 rounded text-appleblue focus:ring-appleblue">
+                                    <span class="ml-3 text-darkgray dark:text-white">非MagSafe尺寸定制 (+¥80起)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="w-5 h-5 rounded text-appleblue focus:ring-appleblue">
+                                    <span class="ml-3 text-darkgray dark:text-white">CNC/木制等材料定制 (+¥900起)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="w-5 h-5 rounded text-appleblue focus:ring-appleblue">
+                                    <span class="ml-3 text-darkgray dark:text-white">特殊功能定制 (+¥1000起)</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- 购买按钮 -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-appleblue hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-full transition-colors flex-1">
+                                添加到购物车
+                            </button>
+                            <button class="border border-appleblue text-appleblue hover:bg-appleblue hover:text-white font-medium py-3 px-8 rounded-full transition-colors">
+                                保存配置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产品特性 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 rounded-xl bg-lightgray dark:bg-gray-800 product-card">
+                    <div class="w-16 h-16 bg-appleblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-bolt text-2xl text-appleblue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkgray dark:text-white mb-2">及低功耗</h3>
+                    <p class="text-applegray">最高功率仅8w</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-lightgray dark:bg-gray-800 product-card">
+                    <div class="w-16 h-16 bg-appleblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-bullseye text-2xl text-appleblue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkgray dark:text-white mb-2">超级静音</h3>
+                    <p class="text-applegray">全速状态,散热器噪音18分贝避免噪音影响</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-lightgray dark:bg-gray-800 product-card">
+                    <div class="w-16 h-16 bg-appleblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-cubes text-2xl text-appleblue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkgray dark:text-white mb-2">多模块支持</h3>
+                    <p class="text-applegray">可添加iwatch,airpods充电器模块,打造简洁桌面</p>
+                </div>
+                <div class="text-center p-6 rounded-xl bg-lightgray dark:bg-gray-800 product-card">
+                    <div class="w-16 h-16 bg-appleblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-wifi text-2xl text-appleblue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkgray dark:text-white mb-2">温度控制</h3>
+                    <p class="text-applegray">内置温度检测模块，保证温度的精准控制和产品的实用性</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-lightgray dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-darkgray dark:text-white mb-4">联系我们</h2>
+                <p class="text-xl text-applegray max-w-2xl mx-auto">
+                    有任何问题或需求，欢迎随时联系我们
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-8 rounded-xl bg-white dark:bg-gray-800 shadow-lg">
+                    <div class="w-16 h-16 bg-appleblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-phone text-2xl text-appleblue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkgray dark:text-white mb-2">电话咨询</h3>
+                    <p class="text-applegray mb-4">工作日 9:00 - 18:00</p>
+                    <a href="tel:13800138000" class="text-appleblue hover:underline">138-0013-8000</a>
+                </div>
+
+                <div class="text-center p-8 rounded-xl bg-white dark:bg-gray-800 shadow-lg">
+                    <div class="w-16 h-16 bg-appleblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-envelope text-2xl text-appleblue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkgray dark:text-white mb-2">邮件联系</h3>
+                    <p class="text-applegray mb-4">24小时内回复</p>
+                    <a href="mailto:contact@jovicube.com" class="text-appleblue hover:underline">contact@jovicube.com</a>
+                </div>
+
+                <div class="text-center p-8 rounded-xl bg-white dark:bg-gray-800 shadow-lg">
+                    <div class="w-16 h-16 bg-appleblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-weixin text-2xl text-appleblue"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkgray dark:text-white mb-2">微信咨询</h3>
+                    <p class="text-applegray mb-4">扫码添加客服微信</p>
+                    <img src="https://picsum.photos/id/3/150/150" alt="微信二维码" class="w-32 h-32 mx-auto rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-12 bg-darkgray text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">杰维工作室</h3>
+                    <p class="text-gray-400 mb-4">专注于高品质3D打印外设的研发与生产，为用户提供完美的使用体验。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-wechat text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-bilibili text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">产品</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">杰维1号pro</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">支持</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">使用手册</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">售后服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">下载中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">关于我们</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">公司介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">新闻动态</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">加入我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 杰维工作室 JOVICUBE. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts.js" defer></script>
+</body>
+</html>
