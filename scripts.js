@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
     };
     
+    // ========== 新增：预加载所有颜色图片 ==========
+    colorOptions.forEach(option => {
+        const imgUrl = option.getAttribute('data-image');
+        const preloadImg = new Image(); // 创建隐藏的图片对象
+        preloadImg.src = imgUrl; // 提前加载图片到浏览器缓存
+    });
+    
     colorOptions.forEach(option => {
         option.addEventListener('click', function() {
             // 移除所有active类
@@ -30,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const color = this.getAttribute('data-color');
             colorName.textContent = colorNames[color];
             
-            // 添加图片切换动画
+            // 淡入淡出动画
             productImage.style.opacity = '0';
             setTimeout(() => {
                 productImage.style.opacity = '1';
