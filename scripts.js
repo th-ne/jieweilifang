@@ -5,10 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const colorName = document.getElementById('color-name');
     
     const colorNames = {
-        'space-gray': '深空灰',
-        'silver': '银色',
-        'blue': '蓝色',
-        'orange': '橙色'
+        'black': '黑色',
+        'clear': '透明色',
+        'orange': '橘色',
+        'cyan': '青色',
+        'white': '白色',
+        'green': '绿色',
+       
+        
     };
     
     colorOptions.forEach(option => {
